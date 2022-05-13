@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- external files -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts and icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <title>Macro Calculator</title>
+  </head>
+  <body>
+    <h1 class="title">Macro Calculator</h1>
+
+    <form class="input-forms">
+      <!-- text inputs -->
+      <div class="text-input-forms">
+        <!-- weight -->
+        <div class="input-weight-form input-form">
+          <input
+            type="number"
+            id="weight"
+            name="weight"
+            min="0"
+            max="1000"
+            class="text-input"
+            placeholder="weight"
+          />
+          <div class="info-tooltip info-weight">
+            <i class="uil uil-info-circle"></i>
+          </div>
+        </div>
+
+        <!-- height -->
+        <div class="input-height-form input-form">
+          <input
+            type="number"
+            id="height"
+            name="height"
+            min="0"
+            max="1000"
+            class="text-input"
+            placeholder="height"
+          />
+          <div class="info-tooltip info-height">
+            <i class="uil uil-info-circle"></i>
+          </div>
+        </div>
+
+        <!-- age -->
+        <div class="input-age-form input-form">
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="0"
+            max="1000"
+            class="text-input"
+            placeholder="age"
+          />
+          <div class="info-tooltip info-age">
+            <i class="uil uil-info-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- slider inputs -->
+      <div class="slider-input-forms"></div>
+    </form>
+
+    <div class="calories">
+      <div class="defecit-calories"></div>
+      <div class="maintenance-calories"></div>
+      <div class="surplus-calories"></div>
+    </div>
+  </body>
+</html>

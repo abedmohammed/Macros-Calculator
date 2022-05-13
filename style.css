@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto&family=Teko&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #001524;
+  --bg-color-light: #00243d;
+  --primary-color: #15616d;
+  --primary-color-alt: #ffecd1;
+  --secondary-color: #ff7d00;
+  --secondary-color-alt: #78290f;
+
+  --title-font: "Teko", sans-serif;
+  --main-font: "Roboto", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--main-font);
+}
+
+h1 {
+  color: var(--bg-color-light);
+  font-family: var(--title-font);
+  font-size: 23vw;
+  text-align: center;
+  position: absolute;
+  pointer-events: none;
+  line-height: 0.8;
+  top: 70px;
+}
+
+/* text inputs */
+.text-input {
+  background-color: var(--primary-color);
+  color: var(--primary-color-alt);
+  border: none;
+  height: 50px;
+  width: 270px;
+  border-radius: 5px;
+
+  font-family: var(--main-font);
+  font-size: 30px;
+  text-align: left;
+  padding: 0 30px;
+  position: relative;
+}
+
+.text-input::placeholder {
+  font-weight: bolder;
+  color: var(--primary-color-alt);
+
+  opacity: 0.8;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.input-form {
+  display: inline-block;
+  position: relative;
+  margin: 50px;
+}
+
+.uil {
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.info-tooltip {
+  background-color: var(--primary-color);
+  color: var(--primary-color-alt);
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.info-tooltip:hover {
+  color: var(--secondary-color);
+}
+
+.text-input-forms {
+  text-align: center;
+  margin-top: 10vw;
+}
