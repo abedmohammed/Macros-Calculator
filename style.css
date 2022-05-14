@@ -95,13 +95,100 @@ h1 {
   right: 5px;
   width: 50px;
   height: 50px;
+  transition: 0.3s;
 }
 
 .info-tooltip:hover {
   color: var(--secondary-color);
+  transition: 0.5s;
 }
 
 .text-input-forms {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 12vw;
+}
+
+.info-tooltip .tooltiptext {
+  pointer-events: none;
+  opacity: 0;
+  width: 250px;
+  bottom: 110%;
+  left: -150px;
+  background-color: var(--secondary-color);
+  color: var(--secondary-color-alt);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  transition: 0.5s;
+  font-family: var(--main-font);
+  font-size: 20px;
+  font-weight: bold;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.info-tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+
+/* sliders */
+.slider-input {
+  appearance: none;
+  position: relative;
+  background-color: var(--primary-color);
+  color: var(--primary-color-alt);
+  border: none;
+  height: 50px;
+  width: 270px;
+  border-radius: 5px;
+  left: -25px;
+  padding-right: 10px;
+}
+
+.slider-input-forms {
+  text-align: center;
+  margin-top: 3vw;
+}
+
+.slider-tooltip {
+  right: -25px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.slider-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 50px;
+  background: var(--primary-color-alt);
+  cursor: pointer;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  opacity: 1;
+}
+
+.slider-form {
+  display: inline-block;
+  position: relative;
+  margin: 75px;
+}
+
+/* slider placeholders */
+.slider-placeholder {
+  pointer-events: none;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-weight: bolder;
+  color: var(--primary-color-alt);
+  opacity: 0.8;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }

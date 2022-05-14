@@ -34,6 +34,7 @@
           />
           <div class="info-tooltip info-weight">
             <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext">Enter weight in kg.</span>
           </div>
         </div>
 
@@ -50,6 +51,7 @@
           />
           <div class="info-tooltip info-height">
             <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext">Enter height in cm.</span>
           </div>
         </div>
 
@@ -66,12 +68,73 @@
           />
           <div class="info-tooltip info-age">
             <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext">Enter age in years.</span>
           </div>
         </div>
       </div>
 
       <!-- slider inputs -->
-      <div class="slider-input-forms"></div>
+      <div class="slider-input-forms">
+        <!-- protein -->
+        <div class="input-protein-form slider-form">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="60"
+            class="slider-input"
+            id="protein"
+          />
+          <div class="info-tooltip info-protein slider-tooltip">
+            <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext"
+              >Pick your protein level preference. Generally should be set to
+              0.8 to 1.2 grams of protein ber lb of body weight.
+            </span>
+          </div>
+          <div class="slider-placeholder">protein</div>
+        </div>
+
+        <!-- fat -->
+        <div class="input-protein-form slider-form">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="60"
+            class="slider-input"
+            id="fat"
+          />
+          <div class="info-tooltip info-protein slider-tooltip">
+            <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext"
+              >Pick your fat level preference. Generally should be set to 20% to
+              30% of your total calories.
+            </span>
+          </div>
+          <div class="slider-placeholder">fat</div>
+        </div>
+        <!-- activity -->
+        <div class="input-protein-form slider-form">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="60"
+            class="slider-input"
+            id="activity"
+          />
+          <div class="info-tooltip info-protein slider-tooltip">
+            <i class="uil uil-info-circle"></i>
+            <span class="tooltiptext"
+              >Pick your activity level. ~1.20 is little to no exercise, ~1.5 is
+              moderate workouts about 3-5 times a week, ~1.9 is rigorous
+              activity daily.
+            </span>
+          </div>
+          <div class="slider-placeholder">activity</div>
+        </div>
+      </div>
     </form>
 
     <div class="calories">
