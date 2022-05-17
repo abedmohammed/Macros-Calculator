@@ -41,6 +41,7 @@ h1 {
   pointer-events: none;
   line-height: 0.8;
   top: 70px;
+  z-index: -99;
 }
 
 /* text inputs */
@@ -191,4 +192,42 @@ h1 {
   font-size: 30px;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+/* submit button */
+.submit-btn {
+  padding: 15px 30px;
+  background: var(--primary-color);
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  color: var(--primary-color-alt);
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: 0.3s;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vw;
+}
+
+.submit-btn:hover {
+  background: var(--secondary-color);
+  color: var(--secondary-color-alt);
+}
+
+/* hide */
+.hide {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.input-forms {
+  transition: 0.2s;
 }
