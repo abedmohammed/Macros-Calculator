@@ -19,7 +19,7 @@
   <body>
     <h1 class="title">Macro Calculator</h1>
 
-    <form class="input-forms">
+    <form autocomplete="off" class="input-forms">
       <!-- text inputs -->
       <div class="text-input-forms">
         <!-- weight -->
@@ -31,6 +31,7 @@
             min="0"
             max="1000"
             class="text-input"
+            onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
             placeholder="weight"
           />
           <div class="info-tooltip info-weight">
@@ -48,6 +49,7 @@
             min="0"
             max="1000"
             class="text-input"
+            onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
             placeholder="height"
           />
           <div class="info-tooltip info-height">
@@ -65,6 +67,7 @@
             min="0"
             max="1000"
             class="text-input"
+            onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
             placeholder="age"
           />
           <div class="info-tooltip info-age">
@@ -84,6 +87,7 @@
             max="100"
             value="60"
             class="slider-input"
+            onchange="updateTextInput(this.value, this.id);"
             id="protein"
           />
           <div class="info-tooltip info-protein slider-tooltip">
@@ -93,7 +97,7 @@
               0.8 to 1.2 grams of protein ber lb of body weight.
             </span>
           </div>
-          <div class="slider-placeholder">protein:</div>
+          <div class="slider-placeholder protein">protein:</div>
         </div>
 
         <!-- fat -->
@@ -104,6 +108,7 @@
             max="100"
             value="60"
             class="slider-input"
+            onchange="updateTextInput(this.value, this.id);"
             id="fat"
           />
           <div class="info-tooltip info-protein slider-tooltip">
@@ -113,7 +118,7 @@
               30% of your total calories.
             </span>
           </div>
-          <div class="slider-placeholder">fat:</div>
+          <div class="slider-placeholder fat">fat:</div>
         </div>
         <!-- activity -->
         <div class="input-protein-form slider-form">
@@ -123,6 +128,7 @@
             max="100"
             value="60"
             class="slider-input"
+            onchange="updateTextInput(this.value, this.id);"
             id="activity"
           />
           <div class="info-tooltip info-protein slider-tooltip">
@@ -133,7 +139,7 @@
               activity daily.
             </span>
           </div>
-          <div class="slider-placeholder">activity:</div>
+          <div class="slider-placeholder activity">activity:</div>
         </div>
       </div>
 
