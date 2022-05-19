@@ -1,7 +1,9 @@
 "use strict";
 
 const submit = document.querySelector(".submit-btn");
+const returnbtn = document.querySelector(".return-btn");
 const form = document.querySelector(".input-forms");
+const output = document.querySelector(".output-forms");
 
 //calorie information
 const macroValues = {
@@ -19,6 +21,7 @@ function updateTextInput(val, className) {
     `.${className}`
   ).textContent = `${className}: ${normalize(val, className)}`;
 }
+
 updateTextInput(document.getElementById("protein").value, "protein");
 updateTextInput(document.getElementById("fat").value, "fat");
 updateTextInput(document.getElementById("activity").value, "activity");
@@ -90,30 +93,32 @@ submit.addEventListener("click", function (e) {
     activity: normalize(document.getElementById("activity").value, "activity"),
   };
 
-  // const calories = Math.floor(
-  //   (66.5 + 13.75 * info.weight + 5.003 * info.height - 6.755 * info.age) *
-  //     info.activity
-  // );
+  form.classList.add("hide");
 
-  // const protein = Math.floor(info.protein * info.weight * 2.20462);
-  // const fat = Math.floor(((info.fat / 100) * calories) / 9);
-  // const carbs = Math.floor((calories - protein * 4 - fat * 9) / 4);
-
+  const defecit = new Calories(info, -300);
   const maintenance = new Calories(info, 0);
   const surplus = new Calories(info, 300);
-  const defecit = new Calories(info, -300);
 
-  console.log(info);
-  console.log(
-    maintenance.calories,
-    maintenance.protein,
-    maintenance.fat,
-    maintenance.carbs
-  );
-  console.log(surplus.calories, surplus.protein, surplus.fat, surplus.carbs);
-  console.log(defecit.calories, defecit.protein, defecit.fat, defecit.carbs);
+  const defecitContainer = document.querySelector(".defecit");
+  displayValues(defecitContainer, defecit);
+
+  const maintenanceContainer = document.querySelector(".maintenance");
+  displayValues(maintenanceContainer, maintenance);
+
+  const surplusContainer = document.querySelector(".surplus");
+  displayValues(surplusContainer, surplus);
+
+  output.classList.remove("hide");
 });
 
+//return action
+returnbtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  form.classList.remove("hide");
+  output.classList.add("hide");
+});
+
+//calories class
 class Calories {
   constructor(info, offset) {
     this.calories = Math.floor(
@@ -127,4 +132,21 @@ class Calories {
       (this.calories - this.protein * 4 - this.fat * 9) / 4
     );
   }
+}
+
+//display values function
+function displayValues(container, calorieObject) {
+  container.querySelector(
+    ".calories"
+  ).textContent = `Calories: ${calorieObject.calories} C`;
+
+  container.querySelector(
+    ".protein"
+  ).textContent = `Protein: ${calorieObject.protein} g`;
+
+  container.querySelector(".fat").textContent = `Fat: ${calorieObject.fat} g`;
+
+  container.querySelector(
+    ".carbs"
+  ).textContent = `Carbs: ${calorieObject.carbs} g`;
 }
