@@ -225,13 +225,7 @@ h1 {
 
 .input-forms {
   transition: 0.5s;
-  height: 300px;
-}
-
-.hide {
-  height: 0;
-  opacity: 0;
-  pointer-events: none;
+  height: 100px;
 }
 
 /* shake */
@@ -282,4 +276,10 @@ h3 {
   letter-spacing: 3px;
   text-transform: uppercase;
   margin: 30px;
+}
+
+.hide {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
